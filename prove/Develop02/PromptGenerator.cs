@@ -1,17 +1,22 @@
 public class PromptGenerator
 {
-    public string date, promptText, entryText;
-
-    public Entry(string _date, string _promptText, string _entryText)
+    List<string> prompts;
+    public PromptGenerator()
     {
-        date = _date;
-        promptText = _promptText;
-        entryText = _entryText;
+        prompts = new List<string>
+        {
+            "Who was the most interesting person I interacted with today?",
+            "What was the best part of my day?",
+            "How did I see the hand of the Lord in my life today?",
+            "What was the strongest emotion I felt today?",
+            "If I had one thing I could do over today, what would it be?"
+        };
     }
-
-    public void Display()
+    public string GetRandomPrompt()
     {
-        Console.WriteLine($"Date: {date} - Prompt: {promptText}");
-        Console.WriteLine(entryText);
+        string randomPrompt = "";
+        int randomIndex = new Random().Next(prompts.Count);
+        randomPrompt = prompts[randomIndex];
+        return randomPrompt;
     }
 }
