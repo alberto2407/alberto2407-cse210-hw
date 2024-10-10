@@ -2,10 +2,10 @@ class Video
 {
     private string title;
     private string author;
-    private int duration;
+    private double duration;
     private List<Comment> comments;
 
-    public Video(string _title, string _author, int _duration)
+    public Video(string _title, string _author, double _duration)
     {
         title = _title;
         author = _author;
@@ -25,8 +25,8 @@ class Video
 
     public void DisplayVideoInfo()
     {
-        Console.WriteLine($"Título: {title}, Autor: {author}, Duración: {duration} segundos");
-        Console.WriteLine($"Cantidad de comentarios: {GetCommentCount()}");
+        Console.WriteLine($"Title: {title}, Author: {author}, Duration: {duration} minuts");
+        Console.WriteLine($"Number of comments: {GetCommentCount()}");
         foreach (var comment in comments)
         {
             comment.DisplayComment();
